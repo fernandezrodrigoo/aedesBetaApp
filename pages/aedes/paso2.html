@@ -1,0 +1,788 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AEDES</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  
+  <!-- Gráficas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> 
+	
+	
+	<!-- Tablas -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css" rel="stylesheet" type="text/css" />
+	<link href="https://cdn.datatables.net/1.10.16/css/dataTables.semanticui.min.css" rel="stylesheet" type="text/css" />
+
+	
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+	
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="" class="logo">
+      <!-- mini logo para la barra lateral 50x50 pixels -->
+      <span class="logo-mini">R|A</span>
+      <!-- logo regular -->
+      <span class="logo-lg"><b>Relevamiento|</b>Aedes</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Ocultar barra lateral -->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Cambiar navegación</span>
+      </a>
+      <!-- Botones del menú -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+        </ul>
+      </div>
+    </nav>
+	  
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <section class="sidebar">
+      <!-- Usuario -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../../dist/img/aedes.png" class="user-image" alt="">
+        </div>
+        <div class="pull-left info">
+          <p>Ficha de relevamiento</p>
+          <!-- Estado -->
+          <a href="#">Online</a>
+        </div>
+      </div>
+
+      <!-- Lista de contenidos -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"></li>
+        <!-- Proyecto -->
+		<li><a href="../../aedesinicio.html"><i class="fa fa-hand-o-left" aria-hidden="true"></i><span>Inicio</span></a></li>
+        <!-- Etapas -->
+		<li class="treeview menu">
+          <a href="#"><i class="fa fa-map-o" aria-hidden="true"></i> <span>Mapas</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+          </span>
+          </a>
+          <ul class="treeview-menu">
+			<li ><a href="basico.html" ><span>Completo
+				</span></a>
+			</li>
+			<li ><a href="basico.html" ><span>Mapas de calor
+				</span></a>
+			</li>
+          </ul>
+        </li>
+        <!--  -->
+        <li class="treeview menu">
+          <a href="#"><i class="fa fa-map-o" aria-hidden="true"></i> <span>Datos</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+          </span>
+          </a>
+          <ul class="treeview-menu">
+			<li ><a href="etapa1costa.html" class="header" ><span>Completos
+				<div class="TriSea-technologies-Switch pull-right">
+				</div>
+				</span></a>
+			</li>
+			<li><a href="etapa1costacentro.html" class="header" ><span>Por categoría
+				<div class="TriSea-technologies-Switch pull-right">
+				</div>
+				</span></a>
+			</li>
+	
+          </ul>
+        </li>
+
+		<li class="header">Proyecto AEDES
+		</li>
+		</ul>
+
+    </section>
+    <!-- -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Trabajo de campo
+        <small>Relevamiento de viviendas</small>
+      </h1>
+
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+	<div class="modal fade" id="paso2" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form id="recipientes" name="recipientes" action="paso2.html" method="GET" onsubmit="actualizar();">
+				<div class="modal-header text-center">
+					<h4 class="modal-title w-100 font-weight-bold">Recipientes</h4>
+				</div>
+				<div class="modal-body mx-3">
+					<div class="form">
+						<h3 class="box-title">Relevamiento de recipientes</h3>
+						<p><label>Tipo de recipiente</label></p>			  
+						  <select class="form-control" name="tipo">
+							  <option value="1">Tanque conectado a la red</option>
+							  <option value="2">Tanque no conectado a la red</option>
+							  <option value="3">Tarro</option>
+							  <option value="4">Balde</option>
+							  <option value="5">Frasco</option>
+							  <option value="6">Florero</option>
+							  <option value="7">Bebedero</option>
+							  <option value="8">Botella</option>
+							  <option value="9">Neumático</option>
+							  <option value="10">Plato de maceta</option>
+							  <option value="11">Pileta de lavar</option>
+							  <option value="12">Piscina</option>
+							  <option value="13">Canaleta</option>
+							  <option value="14">Desagüe</option>
+							  <option value="15">Artículo sanitario</option>
+							  <option value="16">Baño en desuso</option>
+							  <option value="17">Fuente ornamental</option>
+							  <option value="18">Sótano con agua</option>
+							  <option value="19">Techo con agua</option>
+							  <option value="20">Chatarra</option>
+							  <option value="21">Aljibe</option>
+							  <option value="22">Otro </option>
+						  </select>
+						<p><label>Condición del recipiente</label></p>						
+						<div class="pretty p-icon p-round">
+						  <input type="radio" name="rec" id="vacio2" value="1">
+							<div class="state p-success">
+								<i class="icon mdi mdi-check"></i>
+								<label>Recipiente vacío</label>
+							</div>
+						</div>
+						<div class="pretty p-icon p-round">
+						  <input type="radio" name="rec" id="agua2" value="2">
+						  	<div class="state p-warning">
+								<i class="icon mdi mdi-check"></i>
+								<label>Recipiente con agua</label>
+							</div>
+						</div>
+						<div class="pretty p-icon p-round">
+						  <input type="radio" name="rec" id="criaderos2" value="3">
+						  	<div class="state p-danger">
+								<i class="icon mdi mdi-check"></i>
+								<label>Recipiente con criaderos</label>
+							</div>
+						</div>
+
+						<div class="form-check form-check-inline">
+						    <input value="" id="ciudad" name="ciudad" type="text" hidden/>
+							<input value="" id="cluster" name="cluster" type="number" hidden/>
+							<input value="" id="vivienda" name="vivienda" type="number" hidden/>
+							<input value="" id="equipo" name="equipo" type="number" hidden/>
+							<input value="" id="date" name="date" type="date" hidden/>
+						    <input value="" id="direccion" name="direccion" type="text" hidden/>
+							<input value="" id="encuestado" name="encuestado" type="text" hidden/>
+							<input value="" id="personas" name="personas" type="number" hidden/>
+							
+							<input value="" id="vaciototal" name="vaciototal" type="number" hidden/>
+							<input value="" id="aguatotal" name="aguatotal" type="number" hidden/>
+							<input value="" id="criaderostotal" name="criaderostotal" type="number" hidden/>
+							
+							<input value="" id="tipo11" name="tipo11" type="number" hidden/>
+							<input value="" id="tipo12" name="tipo12" type="number" hidden/>
+							<input value="" id="tipo13" name="tipo13" type="number" hidden/>
+							
+							<input value="" id="tipo21" name="tipo21" type="number" hidden/>
+							<input value="" id="tipo22" name="tipo22" type="number" hidden/>
+							<input value="" id="tipo23" name="tipo23" type="number" hidden/>
+							
+							<input value="" id="tipo31" name="tipo31" type="number" hidden/>
+							<input value="" id="tipo32" name="tipo32" type="number" hidden/>
+							<input value="" id="tipo33" name="tipo33" type="number" hidden/>
+							
+							<input value="" id="tipo41" name="tipo41" type="number" hidden/>
+							<input value="" id="tipo42" name="tipo42" type="number" hidden/>
+							<input value="" id="tipo43" name="tipo43" type="number" hidden/>
+							
+							<input value="" id="tipo51" name="tipo51" type="number" hidden/>
+							<input value="" id="tipo52" name="tipo52" type="number" hidden/>
+							<input value="" id="tipo53" name="tipo53" type="number" hidden/>
+							
+							<input value="" id="tipo61" name="tipo61" type="number" hidden/>
+							<input value="" id="tipo62" name="tipo62" type="number" hidden/>
+							<input value="" id="tipo63" name="tipo63" type="number" hidden/>
+							
+							<input value="" id="tipo71" name="tipo71" type="number" hidden/>
+							<input value="" id="tipo72" name="tipo72" type="number" hidden/>
+							<input value="" id="tipo73" name="tipo73" type="number" hidden/>
+							
+							<input value="" id="tipo81" name="tipo81" type="number" hidden/>
+							<input value="" id="tipo82" name="tipo82" type="number" hidden/>
+							<input value="" id="tipo83" name="tipo83" type="number" hidden/>
+							
+							<input value="" id="tipo91" name="tipo91" type="number" hidden/>
+							<input value="" id="tipo92" name="tipo92" type="number" hidden/>
+							<input value="" id="tipo93" name="tipo93" type="number" hidden/>
+							
+							<input value="" id="tipo101" name="tipo101" type="number" hidden/>
+							<input value="" id="tipo102" name="tipo102" type="number" hidden/>
+							<input value="" id="tipo103" name="tipo103" type="number" hidden/>
+							
+							<input value="" id="tipo111" name="tipo111" type="number" hidden/>
+							<input value="" id="tipo112" name="tipo112" type="number" hidden/>
+							<input value="" id="tipo113" name="tipo113" type="number" hidden/>
+							
+							<input value="" id="tipo121" name="tipo121" type="number" hidden/>
+							<input value="" id="tipo122" name="tipo122" type="number" hidden/>
+							<input value="" id="tipo123" name="tipo123" type="number" hidden/>
+							
+							<input value="" id="tipo131" name="tipo131" type="number" hidden/>
+							<input value="" id="tipo132" name="tipo132" type="number" hidden/>
+							<input value="" id="tipo133" name="tipo133" type="number" hidden/>
+							
+							<input value="" id="tipo141" name="tipo141" type="number" hidden/>
+							<input value="" id="tipo142" name="tipo142" type="number" hidden/>
+							<input value="" id="tipo143" name="tipo143" type="number" hidden/>
+							
+							<input value="" id="tipo151" name="tipo151" type="number" hidden/>
+							<input value="" id="tipo152" name="tipo152" type="number" hidden/>
+							<input value="" id="tipo153" name="tipo153" type="number" hidden/>
+							
+							<input value="" id="tipo161" name="tipo161" type="number" hidden/>
+							<input value="" id="tipo162" name="tipo162" type="number" hidden/>
+							<input value="" id="tipo163" name="tipo163" type="number" hidden/>
+							
+							<input value="" id="tipo171" name="tipo171" type="number" hidden/>
+							<input value="" id="tipo172" name="tipo172" type="number" hidden/>
+							<input value="" id="tipo173" name="tipo173" type="number" hidden/>
+							
+							<input value="" id="tipo181" name="tipo181" type="number" hidden/>
+							<input value="" id="tipo182" name="tipo182" type="number" hidden/>
+							<input value="" id="tipo183" name="tipo183" type="number" hidden/>
+							
+							<input value="" id="tipo191" name="tipo191" type="number" hidden/>
+							<input value="" id="tipo192" name="tipo192" type="number" hidden/>
+							<input value="" id="tipo193" name="tipo193" type="number" hidden/>
+							
+							<input value="" id="tipo201" name="tipo201" type="number" hidden/>
+							<input value="" id="tipo202" name="tipo202" type="number" hidden/>
+							<input value="" id="tipo203" name="tipo203" type="number" hidden/>
+							
+							<input value="" id="tipo211" name="tipo211" type="number" hidden/>
+							<input value="" id="tipo212" name="tipo212" type="number" hidden/>
+							<input value="" id="tipo213" name="tipo213" type="number" hidden/>
+							
+							<input value="" id="tipo221" name="tipo221" type="number" hidden/>
+							<input value="" id="tipo222" name="tipo222" type="number" hidden/>
+							<input value="" id="tipo223" name="tipo223" type="number" hidden/>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="modal-footer d-flex justify-content-center">
+					<button type="submit" name="submit" id="agregarRecipientes" class="btn btn-default">Guardar y agregar otro tipo</button>
+					<button id="cambiarMapa" type="button" class="btn btn-danger" data-toggle="modal" data-target="#paso3">Finalizar</button>
+				</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="paso3" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h3 class="modal-title w-100 font-weight-bold" align="center">¿Está seguro que no desea seguir agregando recipientes?</h3>
+				</div>
+				<div>
+					<div class="modal-footer d-flex justify-content-center">
+					<button id="cambiarFormulario" type="button" class="btn btn-default" data-toggle="modal" data-dismiss="modal">Seguir agregando</button>
+					<button type="submit" name="submit" id="irMapa" class="btn btn-danger" form="recipientes">Finalizar</button>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" >
+        <div class="col-md-12">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Agregar nueva vivienda al relevamiento</h3>
+            </div>
+			<div class="box-body" >
+              <div>
+				<div class="form-group">
+					<h3 class="box-title">Agregar datos</h3>
+						<a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#paso1">Nueva vivienda</a>
+				</div>
+            </div>
+          </div>
+          </div>
+		  </div>
+		  </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  
+
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <!-- Texto derecha -->
+    <div class="pull-right hidden-xs">
+      Versión Beta
+    </div>
+    <!-- Texto izquierda -->
+    <strong>Aedes.</strong> Aplicación para el trabajo de campo.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Lenguetas configuración derecha -->
+    <div class="tab-content">
+            <div class="box-body">
+              
+            </div>
+            <!-- /.box-body -->
+          <!-- /.box -->
+        </div>
+	<!-- Configuración -->
+      <div class="tab-pane" id="datos">
+      </div>
+      <!--  -->
+      
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- JS SCRIPTS -->
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+<!-- Tablas -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#paso2').modal({show: 'true', backdrop: 'static', keyboard: false });
+    });
+</script>
+	
+<script type="text/javascript">
+	
+	function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+};
+	
+	var ciudad = getQueryVariable("ciudad");
+	var cluster = getQueryVariable("cluster");
+	var vivienda = getQueryVariable("vivienda");
+	var equipo = getQueryVariable("equipo");
+	var date = getQueryVariable("date");
+	var direccion = getQueryVariable("direccion");
+	var encuestado = getQueryVariable("encuestado");
+	var personas = getQueryVariable("personas");
+	
+	document.getElementById("ciudad").value = ciudad;
+	document.getElementById("cluster").value = cluster;
+	document.getElementById("vivienda").value = vivienda;
+	document.getElementById("equipo").value = equipo;
+	document.getElementById("date").value = date;
+	document.getElementById("direccion").value = direccion;
+	document.getElementById("encuestado").value = encuestado;
+	document.getElementById("personas").value = personas;
+	
+	document.getElementById("vaciototal").value = (Number(getQueryVariable("vaciototal")));
+	document.getElementById("aguatotal").value = (Number(getQueryVariable("aguatotal")));
+	document.getElementById("criaderostotal").value = (Number(getQueryVariable("criaderostotal")));
+	
+	switch (Number(getQueryVariable("rec"), 1)) {			
+	  case 1:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("vaciototal").value = ((Number(getQueryVariable("vaciototal"))) + (Number(1, 1)));
+		break;
+	  case 2:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("aguatotal").value = ((Number(getQueryVariable("aguatotal"))) + (Number(1, 1)));
+		break;
+	  case 3:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("criaderostotal").value = ((Number(getQueryVariable("criaderostotal"))) + (Number(1, 1)));
+		break;
+	  default:
+		//Sentencias_def ejecutadas cuando no ocurre una coincidencia con los anteriores casos
+			console.log("no hizo nada")
+		break;
+	};
+	
+	var tipo = getQueryVariable("tipo");
+	var rec = getQueryVariable("rec");
+	var tipocompuesto = tipo + rec;
+	
+	switch ((Number((tipocompuesto), 2))) {			
+	  case 11:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo11").value = ((Number(getQueryVariable("tipo11"))) + (Number(1, 1)));
+		break;
+	  case 12:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo12").value = ((Number(getQueryVariable("tipo12"))) + (Number(1, 1)));
+		break;
+	  case 13:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo13").value = ((Number(getQueryVariable("tipo13"))) + (Number(1, 1)));
+		break;
+		
+	  case 21:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo21").value = ((Number(getQueryVariable("tipo21"))) + (Number(1, 1)));
+		break;
+	  case 22:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo22").value = ((Number(getQueryVariable("tipo22"))) + (Number(1, 1)));
+		break;
+	  case 23:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo23").value = ((Number(getQueryVariable("tipo23"))) + (Number(1, 1)));
+		break;
+			
+	  case 31:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo31").value = ((Number(getQueryVariable("tipo31"))) + (Number(1, 1)));
+		break;
+	  case 32:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo32").value = ((Number(getQueryVariable("tipo32"))) + (Number(1, 1)));
+		break;
+	  case 33:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo23").value = ((Number(getQueryVariable("tipo23"))) + (Number(1, 1)));
+		break;
+			
+	  case 41:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo41").value = ((Number(getQueryVariable("tipo41"))) + (Number(1, 1)));
+		break;
+	  case 42:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo42").value = ((Number(getQueryVariable("tipo42"))) + (Number(1, 1)));
+		break;
+	  case 43:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo43").value = ((Number(getQueryVariable("tipo43"))) + (Number(1, 1)));
+		break;
+			
+	  case 51:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo51").value = ((Number(getQueryVariable("tipo51"))) + (Number(1, 1)));
+		break;
+	  case 52:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo52").value = ((Number(getQueryVariable("tipo52"))) + (Number(1, 1)));
+		break;
+	  case 53:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo53").value = ((Number(getQueryVariable("tipo53"))) + (Number(1, 1)));
+		break;
+			
+	  case 61:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo61").value = ((Number(getQueryVariable("tipo61"))) + (Number(1, 1)));
+		break;
+	  case 62:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo62").value = ((Number(getQueryVariable("tipo62"))) + (Number(1, 1)));
+		break;
+	  case 63:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo63").value = ((Number(getQueryVariable("tipo63"))) + (Number(1, 1)));
+		break;
+			
+	  case 71:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo71").value = ((Number(getQueryVariable("tipo71"))) + (Number(1, 1)));
+		break;
+	  case 72:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo72").value = ((Number(getQueryVariable("tipo72"))) + (Number(1, 1)));
+		break;
+	  case 73:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo73").value = ((Number(getQueryVariable("tipo73"))) + (Number(1, 1)));
+		break;
+			
+	  case 81:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo81").value = ((Number(getQueryVariable("tipo81"))) + (Number(1, 1)));
+		break;
+	  case 82:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo82").value = ((Number(getQueryVariable("tipo82"))) + (Number(1, 1)));
+		break;
+	  case 83:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo83").value = ((Number(getQueryVariable("tipo83"))) + (Number(1, 1)));
+		break;
+			
+	  case 91:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo91").value = ((Number(getQueryVariable("tipo91"))) + (Number(1, 1)));
+		break;
+	  case 92:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo92").value = ((Number(getQueryVariable("tipo92"))) + (Number(1, 1)));
+		break;
+	  case 93:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo93").value = ((Number(getQueryVariable("tipo93"))) + (Number(1, 1)));
+		break;
+			
+	  case 101:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo101").value = ((Number(getQueryVariable("tipo101"))) + (Number(1, 1)));
+		break;
+	  case 102:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo102").value = ((Number(getQueryVariable("tipo102"))) + (Number(1, 1)));
+		break;
+	  case 103:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo103").value = ((Number(getQueryVariable("tipo103"))) + (Number(1, 1)));
+		break;
+			
+	  case 111:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo111").value = ((Number(getQueryVariable("tipo111"))) + (Number(1, 1)));
+		break;
+	  case 112:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo112").value = ((Number(getQueryVariable("tipo112"))) + (Number(1, 1)));
+		break;
+	  case 113:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo113").value = ((Number(getQueryVariable("tipo113"))) + (Number(1, 1)));
+		break;
+
+	  case 121:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo121").value = ((Number(getQueryVariable("tipo121"))) + (Number(1, 1)));
+		break;
+	  case 122:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo122").value = ((Number(getQueryVariable("tipo122"))) + (Number(1, 1)));
+		break;
+	  case 123:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo123").value = ((Number(getQueryVariable("tipo123"))) + (Number(1, 1)));
+		break;
+			
+	  case 131:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo131").value = ((Number(getQueryVariable("tipo131"))) + (Number(1, 1)));
+		break;
+	  case 132:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo132").value = ((Number(getQueryVariable("tipo132"))) + (Number(1, 1)));
+		break;
+	  case 133:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo133").value = ((Number(getQueryVariable("tipo133"))) + (Number(1, 1)));
+		break;
+			
+	  case 141:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo141").value = ((Number(getQueryVariable("tipo141"))) + (Number(1, 1)));
+		break;
+	  case 142:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo142").value = ((Number(getQueryVariable("tipo142"))) + (Number(1, 1)));
+		break;
+	  case 143:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo143").value = ((Number(getQueryVariable("tipo143"))) + (Number(1, 1)));
+		break;
+			
+	  case 151:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo151").value = ((Number(getQueryVariable("tipo151"))) + (Number(1, 1)));
+		break;
+	  case 152:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo152").value = ((Number(getQueryVariable("tipo152"))) + (Number(1, 1)));
+		break;
+	  case 153:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo153").value = ((Number(getQueryVariable("tipo153"))) + (Number(1, 1)));
+		break;
+			
+	  case 161:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo161").value = ((Number(getQueryVariable("tipo161"))) + (Number(1, 1)));
+		break;
+	  case 162:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo162").value = ((Number(getQueryVariable("tipo162"))) + (Number(1, 1)));
+		break;
+	  case 163:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo163").value = ((Number(getQueryVariable("tipo163"))) + (Number(1, 1)));
+		break;
+			
+	  case 171:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo171").value = ((Number(getQueryVariable("tipo171"))) + (Number(1, 1)));
+		break;
+	  case 172:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo172").value = ((Number(getQueryVariable("tipo172"))) + (Number(1, 1)));
+		break;
+	  case 173:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo173").value = ((Number(getQueryVariable("tipo173"))) + (Number(1, 1)));
+		break;
+			
+	  case 181:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo181").value = ((Number(getQueryVariable("tipo181"))) + (Number(1, 1)));
+		break;
+	  case 182:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo182").value = ((Number(getQueryVariable("tipo182"))) + (Number(1, 1)));
+		break;
+	  case 183:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo183").value = ((Number(getQueryVariable("tipo183"))) + (Number(1, 1)));
+		break;
+			
+	  case 191:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo191").value = ((Number(getQueryVariable("tipo191"))) + (Number(1, 1)));
+		break;
+	  case 192:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo192").value = ((Number(getQueryVariable("tipo192"))) + (Number(1, 1)));
+		break;
+	  case 193:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo193").value = ((Number(getQueryVariable("tipo193"))) + (Number(1, 1)));
+		break;
+			
+	  case 201:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo201").value = ((Number(getQueryVariable("tipo201"))) + (Number(1, 1)));
+		break;
+	  case 202:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo202").value = ((Number(getQueryVariable("tipo202"))) + (Number(1, 1)));
+		break;
+	  case 203:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo203").value = ((Number(getQueryVariable("tipo203"))) + (Number(1, 1)));
+		break;
+			
+	  case 211:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo211").value = ((Number(getQueryVariable("tipo211"))) + (Number(1, 1)));
+		break;
+	  case 212:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo212").value = ((Number(getQueryVariable("tipo212"))) + (Number(1, 1)));
+		break;
+	  case 213:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo213").value = ((Number(getQueryVariable("tipo213"))) + (Number(1, 1)));
+		break;
+			
+	  case 221:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor1
+			document.getElementById("tipo221").value = ((Number(getQueryVariable("tipo221"))) + (Number(1, 1)));
+		break;
+	  case 222:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valor2
+			document.getElementById("tipo222").value = ((Number(getQueryVariable("tipo222"))) + (Number(1, 1)));
+		break;
+	  case 223:
+		//Sentencias ejecutadas cuando el resultado de expresion coincide con valorN
+			document.getElementById("tipo223").value = ((Number(getQueryVariable("tipo223"))) + (Number(1, 1)));
+		break;
+			
+	  default:
+		//Sentencias_def ejecutadas cuando no ocurre una coincidencia con los anteriores casos
+			console.log("no hizo nada")
+		break;
+	};
+	
+	var form = document.getElementById('recipientes');
+	
+	document.getElementById('cambiarMapa').onclick = function() {
+    form.action = 'mapa.html';
+	console.log("cambia a mapa");
+	};
+	
+	document.getElementById('cambiarFormulario').onclick = function() {
+    form.action = 'paso2.html';
+	console.log("cambia a formulario");
+	};
+	
+	document.getElementById('irMapa').onclick = function() {
+	console.log("manda el Formulario");
+	};
+	
+	
+	
+	
+</script>
+
+
+	  
+</body>
+</html>
