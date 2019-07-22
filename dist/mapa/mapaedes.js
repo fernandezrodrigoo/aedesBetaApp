@@ -67,18 +67,29 @@
 		  source: new ol.source.OSM()
 		});
 
+	var geolocation = new ol.Geolocation({
+		tracking: true,
+        projection: proj
+      });
+
+	console.log(geolocation.getPosition)
+	
+	var view = new ol.View({
+        center: geolocation.getPosition(),
+		projection: proj,
+        zoom: 6
+      });
 
 //crea el mapa y agrega controles e interacciones
 
 	var map = new ol.Map({
 		 layers: [raster, vector, heatmap],
 		 target: 'map',
-		 view: new ol.View({
-		   center: [-6246290, -3852856],
-			zoom: 7
-		  })
+		 view: view
 	});
- 
+
+
+
       blur.addEventListener('input', function() {
         heatmap.setBlur(parseInt(blur.value, 10));
       });
@@ -86,6 +97,8 @@
       radius.addEventListener('input', function() {
         heatmap.setRadius(parseInt(radius.value, 10));
       });
+
+
 
 
 
