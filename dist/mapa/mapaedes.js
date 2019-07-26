@@ -67,23 +67,34 @@
 		  source: new ol.source.OSM()
 		});
 
-	var geolocation = new ol.Geolocation({
-		tracking: true,
-        projection: proj
-      });
+	var Mont = ol.proj.transform([-56.0284783, -34.8561385], 'EPSG:4326', 'EPSG:3857');
 
-	console.log(geolocation.getPosition)
-	
-	var view = new ol.View({
-        center: geolocation.getPosition(),
-		projection: proj,
-        zoom: 6
-      });
+	// create a Geolocation object setup to track the position of the device
+	var geolocation = new ol.Geolocation({
+        tracking: true
+	});
+
+	var zoomAmi =
+          document.getElementById('zoomAmi');
+      		zoomAmi.addEventListener('click', function() {
+			var p = geolocation.getPosition();
+			console.log(p)
+			console.log(p[0] + ' : ' + p[1]);
+			var miLugar = ol.proj.transform([parseFloat(p[0]), parseFloat(p[1])], 'EPSG:4326', 'EPSG:3857');
+			view.setCenter(miLugar);
+			view.setZoom (13);
+      }, false);
+
+    var view = new ol.View({
+        center: Mont,
+        zoom: 8
+    });
+
 
 //crea el mapa y agrega controles e interacciones
 
 	var map = new ol.Map({
-		 layers: [raster, vector, heatmap],
+		 layers: [raster, heatmap],
 		 target: 'map',
 		 view: view
 	});
@@ -98,6 +109,8 @@
         heatmap.setRadius(parseInt(radius.value, 10));
       });
 
+
+	
 
 
 

@@ -88,6 +88,30 @@
 		var interactionSnap = new ol.interaction.Snap({
 			source: layerWFS.getSource()
 		});
+
+		var Mont = ol.proj.transform([-56.0284783, -34.8561385], 'EPSG:4326', 'EPSG:3857');
+
+		// create a Geolocation object setup to track the position of the device
+		var geolocation = new ol.Geolocation({
+			tracking: true
+		});
+
+		var zoomAmi =
+			  document.getElementById('zoomAmi');
+				zoomAmi.addEventListener('click', function() {
+				var p = geolocation.getPosition();
+				console.log(p)
+				console.log(p[0] + ' : ' + p[1]);
+				var miLugar = ol.proj.transform([parseFloat(p[0]), parseFloat(p[1])], 'EPSG:4326', 'EPSG:3857');
+				view.setCenter(miLugar);
+				view.setZoom (19);
+		  }, false);
+
+		var view = new ol.View({
+			center: [-6246290, -4102856],
+			zoom: 8,
+			maxZoom: 19
+		});
 			
 	//crea el mapa y agrega controles e interacciones
 		var map = new ol.Map({
@@ -105,13 +129,10 @@
 			],
 			layers: [
                     new ol.layer.Tile({
-                        title: 'Mapa base',
-                        type: 'base',
-                        visible: true,
-                        source: new ol.source.Stamen({
-          				layer: 'toner'
-                        })
-                    }),
+					source: new ol.source.BingMaps({
+					key: 'Akn1QSVaE_kGwi3aJ9_EWZs2I1SsQEnhmGwAaVv-xUuMs2R_SdHwjdNMPZLquA4v',
+					imagerySet:'AerialWithLabels'})
+					}),
 					new ol.layer.Vector({
 						title: 'Relevamiento',
 						visible: true,
@@ -119,10 +140,7 @@
 						crossOrigin: 'anonymous',
 					})						
                 ],
-			view : new ol.View({
-			center: [-6246290, -4102856],
-			zoom: 9
-			})
+			view : view,
 		});
 	
 					
